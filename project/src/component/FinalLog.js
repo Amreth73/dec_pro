@@ -1,8 +1,12 @@
 import React, { useRef } from 'react';
 import Avatar from '@mui/material/Avatar';
 import { useNavigate } from 'react-router-dom';
-const Login = () => {
+import { BrowserRouter, Route, Router, Routes, Link } from 'react-router-dom';
+import Front from '../pages/front';
+import axios from 'axios';
 
+const Final = () => {
+const logg=useRef();
   const c1 = useRef();
   const pp = useRef();
   const em=useRef();
@@ -18,14 +22,24 @@ const Login = () => {
   };
   const ch = (e) => {
     e.preventDefault();
-    navigate("/signUp");
+    <Front />
+    navigate("/hhome");
+
+    // logg.current.style.display="flex";
   };
 
  
 
   return (
-    <div id="main" >
+    <div id="main">
+      <div id="whole">
+      <div id="product">
       
+      <h1>DigitalDreams </h1>
+      <h4>A perfect platform for Marketing</h4>
+      </div>
+      </div>
+      <h2 class="ss">Login Page</h2>
       <form>
         <Avatar id="img" src="/broken-image.jpg" />
         <div id="dd1">
@@ -39,17 +53,17 @@ const Login = () => {
         </div>
         
 
-        <button onClick={ch} id="b1">
-          Login
-        </button>
         
       </form>
-      <img src="https://img.freepik.com/premium-vector/sign-page-illustration-design-template_559664-154.jpg?w=360" id="logo"></img>
+        <button type="submit" onClick={ch} id="b11" ref={logg}>
+          Login
+        </button>
+        {/* <img src="https://img.freepik.com/premium-vector/sign-page-illustration-design-template_559664-154.jpg?w=360" id="logo"></img> */}
     
     </div>
   );
 };
 
-export default Login;
+export default Final;
 
 

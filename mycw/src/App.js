@@ -19,9 +19,12 @@ import HoverCounter from './day 6/higherComp';
 import ClickCounter from './day 6/ClickCounter';
 import PropVal from './day 6/propType';
 import Spread from './day 6/SpreadOp';
-
+import { createBrowserRouter,RouterProvider,BrowserRouter, Route, Routes,Link } from 'react-router-dom';
 import Create from './day 6/createReff';
 import UseEff from './day 6/UseEff';
+import Home from './day 7/home';
+import About from './day 7/about';
+import Nav from './day 7/navBar';
 function App() {
   const fun=(e)=>
   {
@@ -29,9 +32,10 @@ function App() {
     console.log(e);
     e.target.innerText="Clicked";
   }
+ 
   return (
     <div className="App">
-    
+    <button>BLog</button>
       {/* <Fun />
       <Cw2 />
       <h1>To Do List</h1>
@@ -52,7 +56,7 @@ function App() {
         {/* day 5 */}
           {/* <ErrorBoundary>
               <Name  name="harish"/>
-          </ErrorBoundary> */}+
+          </ErrorBoundary> */}
 
           {/* <NameTry name="ajay" /> */}
           {/* <Comp /> */}
@@ -68,7 +72,29 @@ function App() {
           <Hookspp /> */}
         
 
-        <UseEff />
+        {/* <UseEff /> */}
+
+        {/* day 7 */}
+        {/* <BrowserRouter> */}
+        {/* <ul>
+        <li>
+          <Link to="/home">home</Link>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <Link to="/About">About</Link>
+        </li>
+      </ul> */}
+          {/* <Nav />
+        
+            <Routes>
+              <Route path="/home" element={<Home />}></Route>
+              <Route path="/about" element={<About />}></Route>
+            </Routes>
+        </BrowserRouter> */}
+
+        
     </div>
   );
 }
