@@ -3,7 +3,10 @@ import Avatar from '@mui/material/Avatar';
 import { useNavigate } from 'react-router-dom';
 import { BrowserRouter, Route, Router, Routes, Link } from 'react-router-dom';
 import Front from '../pages/front';
+import { useState } from "react";
+
 import axios from 'axios';
+// import { Link, useNavigate } from "react-router-dom"
 
 const Final = () => {
 const logg=useRef();
@@ -11,7 +14,9 @@ const logg=useRef();
   const pp = useRef();
   const em=useRef();
   const navigate = useNavigate();
- 
+  const [error, setError] = useState("");
+  const [user, setUser] = useState(null);
+
 
   const fun = () => {
     if (c1.current.checked) {
@@ -22,10 +27,23 @@ const logg=useRef();
   };
   const ch = (e) => {
     e.preventDefault();
-    <Front />
-    navigate("/hhome");
 
-    // logg.current.style.display="flex";
+    axios
+    .get(`http://localhost:3001/user?email=${em.current.value}& password=${pp.current.value}`)
+    .then((res) => {
+      if(res.data.length>0)
+      {
+          <Front />
+        navigate("/hhome");
+      }
+      else
+      {
+        alert("user not exist")
+      }
+    })
+
+
+  
   };
 
  

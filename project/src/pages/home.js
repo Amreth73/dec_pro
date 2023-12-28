@@ -23,6 +23,7 @@ const Home = () => {
   const navigate = useNavigate();
   const handleSign=()=>{
    navigate("/final");
+  // <Spin />
   }
 
   const fun = () => {
@@ -79,20 +80,29 @@ const Home = () => {
       alert("Enter the password");
     } else if (em.current.value !== "" && un.current.value !== "" && pp.current.value !== "" && cp.current.value !== "") {
       try {
-        const response = await axios.post(`http://localhost:3000/user`, {
+        // Send a POST request to your server for form validation
+        const response = await axios.post('http://localhost:3001/user', {
           username: un.current.value,
           email: em.current.value,
           password: pp.current.value,
+
+          // Add any other form data you want to validate
         });
   
-        if (response.data.valid) {
+        // Check the response from the server
+        if (response.data.length>0) {
+          // If the server responds with validation success
+          // Navigate to the desired page (e.g., '/hhome')
           navigate("/hhome");
         } else {
-          alert("Form validation failed. Please check your input.");
+          // If the server responds with validation failure
+          navigate("/hhome");
+          // alert("Form validation failed. Please check your input.");
         }
       } 
       catch (error) {
         console.error('Error during form validation:', error);
+        alert("An error occurred during form validation. Please try again.");
       }
     }
   };
@@ -100,36 +110,35 @@ const Home = () => {
  
 
   //mine
-  // const  chh=(e)=>
-  // {
-  //   if(un.current.value==="")
-  //  {
-  //      alert("Enter the User Name.")
-  //  }
-  // else if(em.current.value==="")
-  //   {
-  //       alert("Enter the Email.")
-  //   }
-  //   else if (pp.current.value !== cp.current.value) {
-  //     alert("Password must be the same");
-  //   }
-  //   else if(pp.current.value===""||cp.current.value==="")
-  //   {
-  //     alert("Enter the password");
-  //   }
-  //   if(em.current.value!=="" && un.current.value!=="" && pp.current.value!=="" && cp.current.value!=="")
-  //   {
-  //     <Front />
-  //       navigate("/hhome");
-  //     axios.post(`http://localhost:3001/user`,{
-  //     name:un.current.value,
-  //     email:em.current.value,
-  //     password:c2.current.value
-  //   }).then((res)=>{console.log(res.data);<Front />; navigate("/hhome");})
-  //   .catch((err)=>{console.log(err);})
-  //   }
+  const  chh=(e)=>
+  {
+    const name="chandru";
+    if(un.current.value==="")
+   {
+       alert("Enter the User Name.")
+   }
+  else if(em.current.value==="")
+    {
+        alert("Enter the Email.")
+    }
+    else if (pp.current.value !== cp.current.value) {
+      alert("Password must be the same");
+    }
+    else if(pp.current.value===""||cp.current.value==="")
+    {
+      alert("Enter the password");
+    }
+    if(em.current.value!=="" && un.current.value!=="" && pp.current.value!=="" && cp.current.value!=="")
+    {
+      axios.post(`http://localhost:3001/user`,{
+      name:un.current.value,
+      email:em.current.value,
+      password:c2.current.value
+    }).then((res)=>{console.log(res.data);<Front />; navigate("/hhome");})
+    .catch((err)=>{console.log(err);})
+    }
     
-  // }
+  }
 
   return (
     <div id="main">

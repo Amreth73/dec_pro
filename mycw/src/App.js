@@ -75,8 +75,8 @@ function App() {
         {/* <UseEff /> */}
 
         {/* day 7 */}
-        {/* <BrowserRouter> */}
-        {/* <ul>
+        <BrowserRouter>
+        <ul>
         <li>
           <Link to="/home">home</Link>
         </li>
@@ -85,14 +85,14 @@ function App() {
         <li>
           <Link to="/About">About</Link>
         </li>
-      </ul> */}
-          {/* <Nav />
+      </ul>
+          <Nav />
         
             <Routes>
               <Route path="/home" element={<Home />}></Route>
               <Route path="/about" element={<About />}></Route>
             </Routes>
-        </BrowserRouter> */}
+        </BrowserRouter>
 
         
     </div>

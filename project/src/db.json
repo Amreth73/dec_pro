@@ -1,19 +1,64 @@
 {
   "user": [
     {
+      "id": 1,
       "name": "amreth",
       "email": "amreth73@gmail.com",
-      "pasword": "handball73"
+      "password": "handball73"
     },
     {
+      "id": 2,
       "name": "arjun",
       "email": "727722eucs014@skcet.ac.in",
       "pasword": "skcet123"
     },
     {
-      "username": "chandru",
+      "id": 3,
+      "name": "chandru",
       "email": "chandru@gmail.com",
       "password": "cbe"
+    },
+    {
+      "username": "sdfasffsa",
+      "email": "aru@gmail.com",
+      "password": "111",
+      "id": 4
+    },
+    {
+      "username": "sdfasffsa",
+      "email": "727722eucs014@skcet.ac.in",
+      "password": "skcet123",
+      "id": 5
+    },
+    {
+      "username": "amrutha",
+      "email": "amrutha@gmail.com",
+      "password": "1234",
+      "id": 6
+    },
+    {
+      "username": "Arjun",
+      "email": "aru@gmail.com",
+      "password": "11",
+      "id": 7
+    },
+    {
+      "username": "Ajith",
+      "email": "ajith@gmail.com",
+      "password": "11",
+      "id": 8
+    },
+    {
+      "username": "eruma",
+      "email": "amrutha123@gmail.com",
+      "password": "111",
+      "id": 9
+    },
+    {
+      "username": "amrethnaiyee",
+      "email": "lusumental@gmail.com",
+      "password": "1234",
+      "id": 10
     }
   ]
 }
